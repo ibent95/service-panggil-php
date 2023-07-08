@@ -1,1 +1,10 @@
+/.phpintel
+/.settings
+.buildpath
+.project
 
+htdocs
+htdocs/
+htdocs/*
+/htdocs
+/htdocs/*
