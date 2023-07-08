@@ -2,6 +2,7 @@
 
     include 'functions/class_static_value.php';
     $csv = new class_static_value();
+    
 
     include 'functions/koneksi.php';
     include 'functions/function_umum.php';

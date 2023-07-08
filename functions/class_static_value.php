@@ -6,12 +6,12 @@
 	class class_static_value {
 
 		public static $record_count = 10;
-		public static $URL_BASE 	= "http://localhost/service-panggil";
-		public static $HOSTNAME 	= "localhost";
-		public static $DB_HOSTNAME 	= "localhost";
+		public static $URL_BASE 	= "https://www.service-panggil.loc";
+		public static $HOSTNAME 	= "https://www.service-panggil.loc";
+		public static $DB_HOSTNAME 	= "127.0.0.1";
 		public static $DB_USERNAME 	= "root";
 		public static $DB_PASSWORD 	= "";
-		public static $DB_NAME 		= "db_service_panggil";
+		public static $DB_NAME 		= "e_service_app";
 
 		function __construct() {
 			define("record_count", self::$record_count);

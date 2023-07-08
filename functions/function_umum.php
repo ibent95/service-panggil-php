@@ -8,7 +8,7 @@
 
 	use PHPMailer\PHPMailer\PHPMailer;
 	use PHPMailer\PHPMailer\Exception;
-
+	
 	if (($_SERVER['SERVER_NAME'] == "localhost") OR ($_SERVER['SERVER_NAME'] == "127.0.0.1")) {
 		require $_SERVER['CONTEXT_DOCUMENT_ROOT'] . '/' . explode("/", $_SERVER['REQUEST_URI'])[1] . '/' . 'plugins/punic/punic.php';
 		require $_SERVER['CONTEXT_DOCUMENT_ROOT'] . '/' . explode("/", $_SERVER['REQUEST_URI'])[1] . '/' . 'plugins/phpmailer/src/Exception.php';
@@ -16,16 +16,21 @@
 		require $_SERVER['CONTEXT_DOCUMENT_ROOT'] . '/' . explode("/", $_SERVER['REQUEST_URI'])[1] . '/' . 'plugins/phpmailer/src/POP3.php';
 		require $_SERVER['CONTEXT_DOCUMENT_ROOT'] . '/' . explode("/", $_SERVER['REQUEST_URI'])[1] . '/' . 'plugins/phpmailer/src/SMTP.php';
 		// require $_SERVER['CONTEXT_DOCUMENT_ROOT'] . '/' . explode("/", $_SERVER['REQUEST_URI'])[1] . '/' . 'vendor/autoload.php';
+	} else if ((($_SERVER['SERVER_NAME'] != "localhost") OR ($_SERVER['SERVER_NAME'] != "127.0.0.1")) AND count(explode('/', $_SERVER['REQUEST_URI'])) > 2 ) {
+		require '../plugins/punic/punic.php' ;
+		require '../plugins/phpmailer/src/Exception.php';
+		require '../plugins/phpmailer/src/PHPMailer.php';
+		require '../plugins/phpmailer/src/POP3.php';
+		require '../plugins/phpmailer/src/SMTP.php';
+		// require 'vendor/autoload.php';
 	} else {
-		require $_SERVER['CONTEXT_DOCUMENT_ROOT'] . '/' . $csv::$URL_BASE . '/' . 'plugins/punic/punic.php' ;
-		require $_SERVER['CONTEXT_DOCUMENT_ROOT'] . '/' . $csv::$URL_BASE . '/' . 'plugins/phpmailer/src/Exception.php';
-		require $_SERVER['CONTEXT_DOCUMENT_ROOT'] . '/' . $csv::$URL_BASE . '/' . 'plugins/phpmailer/src/PHPMailer.php';
-		require $_SERVER['CONTEXT_DOCUMENT_ROOT'] . '/' . $csv::$URL_BASE . '/' . 'plugins/phpmailer/src/POP3.php';
-		require $_SERVER['CONTEXT_DOCUMENT_ROOT'] . '/' . $csv::$URL_BASE . '/' . 'plugins/phpmailer/src/SMTP.php';
-		// require $_SERVER['CONTEXT_DOCUMENT_ROOT'] . '/' . $csv::$URL_BASE . '/' . 'vendor/autoload.php';
+	    require 'plugins/punic/punic.php' ;
+	    require 'plugins/phpmailer/src/Exception.php';
+	    require 'plugins/phpmailer/src/PHPMailer.php';
+	    require 'plugins/phpmailer/src/POP3.php';
+	    require 'plugins/phpmailer/src/SMTP.php';
 	}
-	// echo $_SERVER['CONTEXT_DOCUMENT_ROOT'];
-
+	
     function cekLogin($type = 'pelanggan') {
         if (loginUser($type) === FALSE) {
             // header_remove();

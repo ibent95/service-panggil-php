@@ -19,10 +19,10 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `db_service_panggil`
+-- Database: `e_service_app`
 --
-CREATE DATABASE IF NOT EXISTS `db_service_panggil` DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci;
-USE `db_service_panggil`;
+CREATE DATABASE IF NOT EXISTS `e_service_app` DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci;
+USE `e_service_app`;
 
 -- --------------------------------------------------------
 
